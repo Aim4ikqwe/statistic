@@ -51,9 +51,10 @@ public class Main {
 
             // Вывод частоты символов через foreach
             System.out.println("Частота символов:");
-            charFrequency.forEach((ch, freq) -> {
-                System.out.printf("Символ '%c' встречается: %d раз(а)%n", ch, freq);
-            });
+            for (int c : content.chars().toArray()) {
+                char character = (char) c;
+                charFrequency.put(character, charFrequency.getOrDefault(character, 0L) + 1);
+            }
             System.out.println(separator);
 
             // Запись результатов в файл через foreach
